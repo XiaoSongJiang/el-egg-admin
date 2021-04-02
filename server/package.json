@@ -1,0 +1,83 @@
+{
+  "name": "ele-admin-server",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "egg": {
+    "declarations": true,
+    "tsHelper": {
+      "watchDirs": {
+        "constant": {
+          "enabled": true,
+          "directory": "app/constant",
+          "declareTo": "Application.constant"
+        },
+        "validateRule": {
+          "enabled": true,
+          "directory": "app/validateRule",
+          "declareTo": "Application.validateRule"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "alipay-sdk": "^3.1.5",
+    "axios": "^0.21.1",
+    "bcryptjs": "^2.4.3",
+    "casbin": "^5.4.1",
+    "casbin-sequelize-adapter": "^2.1.0",
+    "egg": "^2.29.1",
+    "egg-bulls": "^1.1.22",
+    "egg-cors": "^2.2.3",
+    "egg-jwt": "^3.1.7",
+    "egg-redis": "^2.4.0",
+    "egg-scripts": "^2.11.0",
+    "egg-sequelize": "^6.0.0",
+    "egg-swagger-doc": "^2.3.2",
+    "egg-validate": "^2.0.2",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "nanoid": "^3.1.20",
+    "nodemailer": "^6.5.0",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "qs": "^6.9.6",
+    "redlock": "^4.2.0",
+    "svg-captcha": "^1.4.0"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.11.0",
+    "egg-mock": "^3.21.0",
+    "eslint": "^5.13.0",
+    "eslint-config-egg": "^7.1.0"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --sticky --title=tripartite-server",
+    "stop": "egg-scripts stop --title=tripartite-server",
+    "db-init": "node ./app/sql/initDB.js",
+    "dev": "egg-bin dev --port=7777",
+    "local": "egg-bin dev --cluster --workers=4 --port=7777",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "10"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "MIT"
+}

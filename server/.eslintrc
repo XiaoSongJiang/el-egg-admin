@@ -1,0 +1,19 @@
+{
+  "extends": "eslint-config-egg",
+  "rules": {
+    "no-bitwise": "off",
+    "no-var": "error",
+    "no-undef": "error",
+    "no-new-require": "off",
+    "array-bracket-spacing": "off",
+    "dot-notation": "off",
+    "semi": "off",
+    "no-empty-pattern": "off",
+    "no-empty-function": "off",
+    "no-var-requires": "off",
+    "eqeqeq": "error",
+    "space-before-blocks": "off",
+    "no-extra-boolean-cast": "off",
+    "quote-props": "off"
+  }
+}
